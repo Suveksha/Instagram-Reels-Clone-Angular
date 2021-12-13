@@ -1,0 +1,18 @@
+body{
+    margin:0;
+    background-color:#FAFAFA ;
+}
+.container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    padding:5vw;
+}
+
+.col{
+    padding:2%;
+}
+
+.phone-carousel{
+   margin-left:25%;
+   margin-right:25%;
+}

@@ -1,0 +1,19 @@
+<div mat-card>
+    <div class="form-container">
+            <div class="logo">
+                <img src=".\assets\Images\Instagram.jpg" alt="Instagram-Logo">
+            </div>
+            <form [formGroup]="loginForm" class="form">
+                <input formControlName='email'  type='email' placeholder="Phone number, username or email" required>
+                <input formControlName='password' type='password' placeholder="Password" required>
+                <button class="btn-login" mat-flat-button color="primary" (click)="saveForm()">LogIn</button>
+            </form>
+
+            <mat-card-subtitle class="card-sub">Log in with Facebook</mat-card-subtitle>
+
+            <mat-card-subtitle class="forgot-txt">Forgot password?</mat-card-subtitle>
+
+            <mat-card-subtitle class="account-txt">Don't have an account? <span>Sign up</span></mat-card-subtitle>
+
+    </div>
+</div>

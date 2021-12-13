@@ -1,0 +1,11 @@
+.video-wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:2%;
+}
+
+.video-wrapper video{
+    width:70vw;
+    height:70vh;
+}

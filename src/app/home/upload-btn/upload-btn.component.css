@@ -1,0 +1,17 @@
+.btn-upload{
+    width:10%;
+    padding-left:2%;
+    padding-right:2%;
+    padding-top:1%;
+    padding-bottom:1%;
+}
+.btn-wrapper{
+    display:flex;
+    justify-content: center;
+    margin-top:3vh;
+}
+
+.btn-upload:hover
+{
+    background-color: #ff5e9e;
+}

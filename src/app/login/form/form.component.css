@@ -1,0 +1,73 @@
+.form-container{
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding:2%;
+    border:1px gray solid;
+    margin-top:6vh;
+    background-color:#FFFFFF;
+    padding-bottom:5vh;
+    width:27vw;
+}
+
+.form{
+    display:flex;
+    flex-direction: column;
+    padding:3%;
+    margin-top:2vh;
+    background-color:#FFFFFF;
+    margin-left:2vw;
+    margin-right:2vw;
+    margin-bottom: 3vh;
+}
+
+.logo{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    margin-top:3vh;
+}
+
+.logo img{
+    width:15vw;
+}
+
+input{
+    padding:2.5%;
+    margin:2%;
+    outline:gray 1px;
+}
+
+
+.btn-login:hover{
+    background-color:#586ff7;
+}
+
+.card-sub{
+    text-align: center;
+    font-weight: bold;
+    color:#3F51B5;
+    margin-top:3vh;
+    cursor: pointer;
+}
+
+.forgot-txt{
+    text-align: center;
+    margin-top:3vh;
+    color:#3F51B5;
+    cursor: pointer;
+}
+.account-txt{
+    text-align: center;
+    margin-top: 6vh;
+}
+
+.account-txt>span{
+    color:#3F51B5;
+    font-weight:bold;
+}
+
+.account-txt>span:hover{
+    color:#586ff7;
+    cursor: pointer;
+}

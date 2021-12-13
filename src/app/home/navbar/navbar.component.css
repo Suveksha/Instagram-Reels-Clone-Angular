@@ -1,0 +1,25 @@
+.nav-bar{
+    margin:0;
+    background-color: white;
+    border-bottom: gray;
+    height:8vh;
+}
+
+.nav-bar ul{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.nav-bar ul li{
+    display:inline-flex;
+    padding:2%;
+    cursor: pointer;
+}
+
+.insta-logo{
+    position: absolute;
+    margin-left:2%;
+    margin-top:0.5%;
+    padding-left:2%;
+    height: 6vh;
+}
