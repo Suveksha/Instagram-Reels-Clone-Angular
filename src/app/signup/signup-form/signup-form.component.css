@@ -1,0 +1,33 @@
+.form-container{
+    margin:2%;
+    padding:2%;
+    border: 1px gray solid;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signUpForm{
+    display: flex;
+    flex-direction: column;
+    padding:5%;
+    margin:5%;
+    width:25vw;
+    justify-content: center;  
+}
+
+.signUpForm input{
+    padding:2%;
+    margin-bottom:2%;
+    outline: 1px gray;
+}
+
+.insta-logo{
+    align-self: center;
+    margin-top:3%;
+}
+
+.btn-signup:hover{
+    background-color:#586ff7;
+}

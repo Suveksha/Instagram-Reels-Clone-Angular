@@ -1,0 +1,24 @@
+.info-container{
+    display: flex;
+    flex-direction: row;
+    margin:3%;
+    padding:2%;
+}
+
+.pro-img{
+    border-radius: 50%;
+    width:20vw;
+}
+
+.info-wrapper{
+    display:flex;
+    flex-direction: column;
+    padding:2%;
+    margin:5%;
+}
+
+.info{
+    padding:2%;
+    margin:3%;
+}
+

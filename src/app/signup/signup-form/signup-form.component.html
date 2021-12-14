@@ -1,0 +1,16 @@
+<body>
+    <div mat-card>
+        <div class="form-container">
+            <div class="insta-logo">
+                <img src=".\assets\Images\Instagram.jpg" alt="Instagram-Logo">
+            </div>
+            <form class="signUpForm">
+                <input formControlName='email'  type='text' placeholder="Phone number or email" required #emailSignUp>
+                <input formControlName='fname'  type='text' placeholder="Full Name" required>
+                <input formControlName='uname'  type='text' placeholder="Username" required>
+                <input formControlName='password'  type='password' placeholder="Password" required #signUpPassword>
+                <button class="btn-signup" mat-flat-button color="primary" routerLink="/home" (click)="signUp(emailSignUp.value, signUpPassword.value)" >Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>

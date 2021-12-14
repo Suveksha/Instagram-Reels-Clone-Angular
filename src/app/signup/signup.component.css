@@ -1,0 +1,14 @@
+body{
+    margin:0;
+    background-color:#FAFAFA ;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.col{
+    margin:5%;
+    padding:2%;
+}

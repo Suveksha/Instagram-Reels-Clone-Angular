@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-form',
@@ -8,19 +8,22 @@ import { FormBuilder } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder){}
+  isSignedIn=false
+  constructor(public firebaseService:FirebaseService){}
 
-  loginForm=this.formBuilder.group({
-    email:[''],
-    password:['']
-  })
-
-  saveForm()
-  {
-    console.log(this.loginForm.value)
-  }
 
   ngOnInit(): void {
+    if(localStorage.getItem('user')!==null)
+    this.isSignedIn=true;
+    else
+    this.isSignedIn=false;
+  }
+
+  async signIn(email:string, password:string){
+    await this.firebaseService.signin(email,password)
+
+    if(this.firebaseService.isLoggedIn)
+      this.isSignedIn=true
   }
 
 }

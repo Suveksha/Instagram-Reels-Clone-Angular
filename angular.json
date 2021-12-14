@@ -99,6 +99,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "instagram-clone-app:build:production",
+            "firebaseProject": "instagram-clone-app-63753",
+            "firebaseHostingSite": "instagram-clone-app-63753"
+          }
         }
       }
     }

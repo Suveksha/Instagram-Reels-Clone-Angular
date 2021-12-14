@@ -14,6 +14,17 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { UploadBtnComponent } from './home/upload-btn/upload-btn.component';
 import { VideoComponent } from './home/video/video.component';
+import { SignupComponent } from './signup/signup.component';
+import { SignupFormComponent } from './signup/signup-form/signup-form.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserInfoComponent } from './profile/user-info/user-info.component';
+import { VideoContainerComponent } from './profile/video-container/video-container.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
+
+import {AngularFireModule} from '@angular/fire/compat';
+import { FirebaseService } from './services/firebase.service';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +35,12 @@ import { VideoComponent } from './home/video/video.component';
     NavbarComponent,
     UploadBtnComponent,
     VideoComponent,
+    SignupComponent,
+    SignupFormComponent,
+    ProfileComponent,
+    UserInfoComponent,
+    VideoContainerComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,9 +50,19 @@ import { VideoComponent } from './home/video/video.component';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    RouterModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBKE9xyOJ__9MVrNMD33aL-UQGfB_WtgrA",
+      authDomain: "instagram-clone-app-63753.firebaseapp.com",
+      projectId: "instagram-clone-app-63753",
+      storageBucket: "instagram-clone-app-63753.appspot.com",
+      messagingSenderId: "232589787762",
+      appId: "1:232589787762:web:cf2f53faf87354575b78eb"
+    })
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [FirebaseService],
+  bootstrap: [AppComponent], 
+  
 })
 export class AppModule { }
