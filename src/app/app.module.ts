@@ -21,9 +21,14 @@ import { UserInfoComponent } from './profile/user-info/user-info.component';
 import { VideoContainerComponent } from './profile/video-container/video-container.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 import {AngularFireModule} from '@angular/fire/compat';
 import { FirebaseService } from './services/firebase.service';
+import { LikeComponent } from './like/like.component';
+import { CommentComponent } from './comment/comment.component';
+
 
 
 @NgModule({
@@ -41,6 +46,8 @@ import { FirebaseService } from './services/firebase.service';
     UserInfoComponent,
     VideoContainerComponent,
     NotFoundComponent,
+    LikeComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,10 @@ import { FirebaseService } from './services/firebase.service';
       storageBucket: "instagram-clone-app-63753.appspot.com",
       messagingSenderId: "232589787762",
       appId: "1:232589787762:web:cf2f53faf87354575b78eb"
-    })
+    }),
+    MatIconModule,
+    MatMenuModule,
+   
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent], 

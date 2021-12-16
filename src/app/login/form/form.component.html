@@ -6,7 +6,7 @@
             <form class="form">
                 <input formControlName='email'  type='text' placeholder="Phone number, username or email" required #loginEmail>
                 <input formControlName='password' type='password' placeholder="Password" required #loginPassword>
-                <button class="btn-login" mat-flat-button color="primary" routerLink="/home" (click)="signIn(loginEmail.value,loginPassword.value)">LogIn</button>
+                <button class="btn-login" mat-flat-button color="primary" (click)="signIn(loginEmail.value,loginPassword.value)">LogIn</button>
             </form>
 
             <mat-card-subtitle class="card-sub">Log in with Facebook</mat-card-subtitle>

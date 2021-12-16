@@ -8,12 +8,16 @@
 .nav-bar ul{
     display:flex;
     justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .nav-bar ul li{
     display:inline-flex;
     padding:2%;
+    padding-top:0;
     cursor: pointer;
+    align-items: center;
+
 }
 
 .insta-logo{

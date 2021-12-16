@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-upload-btn',
   templateUrl: './upload-btn.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadBtnComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private firebaseService:FirebaseService
+  ) { }
 
   ngOnInit(): void {
   }
-
+  
 }

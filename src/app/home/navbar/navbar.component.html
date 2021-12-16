@@ -3,9 +3,24 @@
         <img src=".\assets\Images\Instagram.jpg" alt="Instagram Logo" class="insta-logo" routerLink="/home">
     </div>
     <ul>
-        <li routerLink="/home"><a>Home</a></li>
-        <li><a>Explore</a></li>
-        <li><a>Notification</a></li>
-        <li routerLink="/profile"><a>Profile</a></li>
+        <li routerLink="/home"><a><mat-icon aria-hidden="false" aria-label="Home">home</mat-icon></a></li>
+        <li><a><mat-icon>explore</mat-icon></a></li>
+        <li><a><mat-icon>notifications</mat-icon></a></li>
+        <li>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/profile">
+              <mat-icon>account_circle</mat-icon>
+              <span>Profile</span>
+            </button>
+            <button mat-menu-item (click)="handleLogout()">
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Logout</span>
+            </button>
+          </mat-menu>
+        </li>
+          
     </ul>
 </div>

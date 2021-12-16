@@ -33,8 +33,8 @@ export class SignupFormComponent implements OnInit {
     this.isSignedUp=false;
   }
 
-  async signUp(email:string, password:string){
-    await this.firebaseService.signup(email,password)
+  async signUp(email:string, password:string, name:string, uname:string){
+    await this.firebaseService.signup(email,password,name, uname)
 
     if(this.firebaseService.isLoggedIn)
       this.isSignedUp=true
