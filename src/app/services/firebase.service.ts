@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class FirebaseService {
 
+  userData:any;
   isLoggedIn=false;
   constructor(public firebaseAuth:AngularFireAuth,
     private firestore: AngularFirestore,
@@ -23,6 +24,7 @@ export class FirebaseService {
    {
      await this.firebaseAuth.signInWithEmailAndPassword(email,password)
      .then(res=>{
+       this.userData=res.user;
        this.isLoggedIn=true
        localStorage.setItem('user',JSON.stringify(res.user))
      })
@@ -34,6 +36,7 @@ export class FirebaseService {
    {
      await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
      .then(res=>{
+       this.userData=res.user;
       localStorage.setItem('user',JSON.stringify(res.user)) //So that whenever we refresh the page the user can just login without sending back data to the server
        return this.firestore.collection('users').doc(res.user?.uid).set({
           email: email,
@@ -51,6 +54,15 @@ export class FirebaseService {
      this.firebaseAuth.signOut();
      localStorage.removeItem('user');
      this.router.navigate(['/login']);
+   }
+
+   async getImgUrl()
+   {
+    await this.firebaseAuth.onAuthStateChanged(user=>{
+      if(user){
+        this.angularFireStorage.storage.ref(``)
+      }
+    })
    }
 
 

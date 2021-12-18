@@ -1,4 +1,4 @@
 <div class="btn-wrapper">
-    <input type="file" accept="*.mp4" id="upload">
-    <button mat-flat-button color="accent" class="btn-upload">Upload</button>
+    <input type="file" accept="*.mp4" id="upload" (change)="uploadVideo($event)">
+    <button mat-flat-button color="accent" class="btn-upload" (click)="this.uploadToFirebase()" >Upload</button>
 </div>
