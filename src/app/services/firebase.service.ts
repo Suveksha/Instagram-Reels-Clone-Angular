@@ -12,6 +12,8 @@ import { Observable } from 'rxjs';
 export class FirebaseService {
 
   userData:any;
+  posts:string[]=[];
+  postsURL:string[]=[];
   isLoggedIn=false;
   constructor(public firebaseAuth:AngularFireAuth,
     private firestore: AngularFirestore,
@@ -42,7 +44,11 @@ export class FirebaseService {
           email: email,
           password: password,
           name: name,
-          user_name:uname
+          user_name:uname,
+          posts:[...this.posts],
+          postsURL:[...this.postsURL],
+          comments:[],
+          likes:[]
        })
      })
 
@@ -55,15 +61,9 @@ export class FirebaseService {
      localStorage.removeItem('user');
      this.router.navigate(['/login']);
    }
-
-   async getImgUrl()
-   {
-    await this.firebaseAuth.onAuthStateChanged(user=>{
-      if(user){
-        this.angularFireStorage.storage.ref(``)
-      }
-    })
-   }
+   
+   
+   
 
 
 }

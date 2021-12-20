@@ -1,7 +1,5 @@
-<div class="video-wrapper">
+<div class="video-wrapper" *ngFor="let video of videoURL">
     <video>
-        <source src=".\assets\Video\pexels-mikhail-nilov-7677695.mp4">
+        <source src={{video}}>
     </video>
-    <app-like></app-like>
-    <app-comment></app-comment>
 </div>

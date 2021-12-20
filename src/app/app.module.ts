@@ -28,6 +28,7 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { FirebaseService } from './services/firebase.service';
 import { LikeComponent } from './like/like.component';
 import { CommentComponent } from './comment/comment.component';
+import { VideoWrapperComponent } from './video-wrapper/video-wrapper.component';
 
 
 
@@ -48,6 +49,7 @@ import { CommentComponent } from './comment/comment.component';
     NotFoundComponent,
     LikeComponent,
     CommentComponent,
+    VideoWrapperComponent,
   ],
   imports: [
     BrowserModule,

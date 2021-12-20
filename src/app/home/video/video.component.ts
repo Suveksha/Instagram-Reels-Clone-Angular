@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { Input } from '@angular/core';
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private firebaseService:FirebaseService,
+    private fireStorage:AngularFireStorage
+  ) { }
+
+  @Input() postData:any;
+  @Input() videoURL:any;
+ 
+
+
 
   ngOnInit(): void {
+    
   }
 
   

@@ -1,5 +1,7 @@
-<div class="video-container">
-    <div class="video-wrapper"><app-video></app-video></div>
-    <div class="video-wrapper"><app-video></app-video></div>
-    <div class="video-wrapper"><app-video></app-video></div>
+<div class="video-container" *ngFor="let url of videoURL" >
+    <div class="video-wrapper">
+        <video>
+            <source src={{url}}>
+        </video>
+    </div>
 </div>
