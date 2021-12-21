@@ -14,14 +14,10 @@ export class VideoComponent implements OnInit {
     private fireStorage:AngularFireStorage
   ) { }
 
-  @Input() postData:any;
-  @Input() videoURL:any;
+  @Input() videoPostData:any[]=[];
  
-
-
-
   ngOnInit(): void {
-    
+    console.log("VideoURL=",this.videoPostData)
   }
 
   

@@ -16,27 +16,26 @@ export class HomeComponent implements OnInit {
     private firestore:AngularFirestore
   ) { }
 
-  res:any;
-  userVideoData:any=[];
-  userVideoURL:any=[];
-    
+    SinglePost:any;
+    postObj:any={
+      postId:'',
+      postUrl:''
+    }
+    postData:any[]=[]//array of obj
+    pdData:any;
+    uData:any;
   ngOnInit(): void {
-      this.firestore.collection('users').doc(this.firebaseService.userData.uid).get().subscribe(val=>{
-      console.log("Value=",val.data()) //works
-      this.res=val.data()
-      console.log(this.res)
-      this.userVideoData=this.res.posts
-      console.log("UserVideoData=",this.userVideoData)
 
-      this.userVideoURL=this.res.postsURL
-      console.log("PostsURL=",this.userVideoURL)
-    })
+    this.firestore.collection('posts').get().subscribe(eachData=>{
+      console.log("EachData=",eachData)
+      eachData.forEach(postDoc=>{
+        console.log("PostD=",postDoc)
+        console.log("PostDdata=",postDoc.data())
+        this.pdData=postDoc.data();
 
-    // console.log("UserVideoData=",this.userVideoData)
-
-    this.firebaseService.posts=this.userVideoData.posts;
-    this.firebaseService.postsURL=this.userVideoURL.postsURL;
-    // console.log(this.firebaseService.posts[0])
+        this.postData.push(this.pdData)
+      })
+    });
+    }
+    
   }
-
-}

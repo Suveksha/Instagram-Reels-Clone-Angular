@@ -4,6 +4,7 @@ import { pipe, finalize } from 'rxjs';
 import { Input } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Console } from 'console';
 @Component({
   selector: 'app-upload-btn',
   templateUrl: './upload-btn.component.html',
@@ -16,52 +17,53 @@ export class UploadBtnComponent implements OnInit {
     private fireStorage:AngularFireStorage,
     private firestore:AngularFirestore
   ) { }
+  
 
-
-  video:string="";
-  videoName:string="";
-
-  uploadVideo(event:any)
-  {
-    this.video=event.target.files[0];
-    this.videoName=event.target.files[0].name;
-    console.log(event.target.files[0].name)
-  }
-
-  user:any=this.firebaseService.userData.uid;
-  imgURL:any[]=[];
-
+  uData:any;
   uploadTask:any;
-  @Input() videoData:any;
-  @Input() videoURL:any;
-  uploadToFirebase()
+  prevPostID:any[]=[];
+  postRes:any;
+  pid:any;
+
+  uploadToFire(video:any)
   {
-    this.videoData.push(this.videoName)
-    this.uploadTask=this.fireStorage.upload(`/videos/${this.user}/${this.videoName}`,this.video)
+    console.log("Video Value",video.files[0])
+    this.uploadTask=this.fireStorage.upload(`/videos/${video.files[0].name}`, video.files[0]);
 
-    this.firestore.collection('users').doc(this.firebaseService.userData.uid).update({
-      posts:[...this.videoData]
-    });
-
+    // getting the previous postID array from firebase
+    this.firestore.collection('users').doc(this.uData.uid).get().subscribe(val=>{
+      console.log("PrevData",val.data())
+      this.postRes=val.data();
+      this.prevPostID=this.postRes.postID;
+      console.log("PostID PrevArray=",this.prevPostID)
+    })
+    //uploading data to firestore
     this.uploadTask.then((uploadSnap:any)=>{
-      console.log("UPLOAD COMPLETE")
-      this.fireStorage.ref(`/videos/${this.user}/${this.videoName}`).getDownloadURL().subscribe(url=>{
+      this.pid=this.firestore.createId();
+      console.log("Upload Complete")
+      this.fireStorage.ref(`/videos/${video.files[0].name}`).getDownloadURL().subscribe(url=>{
         console.log("URL=",url)
-        this.videoURL.push(url)
-        this.firestore.collection('users').doc(this.firebaseService.userData.uid).update({
-          postsURL:[...this.videoURL]
+        
+        this.firestore.collection('posts').doc(this.pid).set({
+          postURL:url,
+          uid:this.uData.uid,
+          postId:this.pid
+        })
+          this.prevPostID.push(this.pid)
+        this.firestore.collection('users').doc(this.uData.uid).update({
+          postID:[...this.prevPostID]
+        })
         })
       })
-    })
-    console.log(this.video)
-    console.log(this.firebaseService.userData.uid)
-
-  }
-
+    }
 
  
   ngOnInit(): void {
-
+    this.firebaseService.getUserData()
+    this.uData=this.firebaseService.userData;
+    console.log("HelloUserfromUpload",this.uData.uid)
   }
+
   
 }
+

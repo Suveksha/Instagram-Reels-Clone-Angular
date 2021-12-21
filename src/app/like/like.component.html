@@ -1,6 +1,6 @@
 
 <div *ngIf="isLiked then Liked else UnLiked"></div>
 
-<ng-template #Liked><mat-icon class='like' (click)="checkClick()">favorite</mat-icon></ng-template>
-<ng-template #UnLiked><mat-icon (click)="checkClick()">favorite_border</mat-icon></ng-template>
+<ng-template #Liked><mat-icon class='like' (click)="checkLiked()">favorite</mat-icon></ng-template>
+<ng-template #UnLiked><mat-icon (click)="checkLiked()">favorite_border</mat-icon></ng-template>
 

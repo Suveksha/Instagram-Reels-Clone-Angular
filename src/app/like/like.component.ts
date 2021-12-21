@@ -17,28 +17,11 @@ export class LikeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isLiked:boolean=true;
-  isClicked=false;
-  likeCount=0;
-  postsResponse:any;
-  posts:any[]=[]
-  @Input() postId:any;
+  isLiked=false;
+    checkLiked(){
+      this.isLiked=!this.isLiked;
+    }
 
-  checkClick()
-  {
-    this.isClicked=!this.isClicked;
-    this.likeCount++;
-    this.isLiked= !this.isLiked;
-    console.log(this.isLiked)
-    console.log("PostID=", this.postId)
-    this.fireStore.collection('users').doc(this.firebaseService.userData.uid).get().subscribe(val=>{
-      this.postsResponse=val.data();
-      this.posts=this.postsResponse.posts;
-      console.log("Posts=", this.posts)
-    })
-    // this.fireStore.collection('users').doc(this.firebaseService.userData.uid).collection('likes').doc(this.posts.)
-    
+  
   }
- 
 
-}

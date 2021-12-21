@@ -1,5 +1,9 @@
-<div class="video-wrapper" *ngFor="let video of videoURL">
+<div class="video-wrapper" *ngFor="let video of videoPostData">
     <video>
-        <source src={{video}}>
+        <source src={{video.postURL}}>
     </video>
+    <p>{{video.postId}}</p>
+    <p>{{video.postUrl}}</p>
+    <app-like></app-like>
+    <app-comment></app-comment>
 </div>

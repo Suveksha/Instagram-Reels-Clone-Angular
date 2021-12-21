@@ -1,0 +1,10 @@
+posts=>{
+      posts.forEach(postDoc => {
+        console.log("PostDoc",postDoc.data())
+        this.SinglePost=postDoc.data()
+        console.log("PostURL=",this.SinglePost.postURL)
+        this.postObj.postId=this.SinglePost.postId;
+        this.postObj.postUrl=this.SinglePost.postURL;
+        this.postData.push(this.postObj)
+
+        console.log("Hi I am PostData",this.postData)
