@@ -4,6 +4,6 @@
     </video>
     <p>{{video.postId}}</p>
     <p>{{video.postUrl}}</p>
-    <app-like></app-like>
-    <app-comment></app-comment>
+    <app-like [pData]="video"></app-like>
+    <app-comment [postData]="video"></app-comment>
 </div>

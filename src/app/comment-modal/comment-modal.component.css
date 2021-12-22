@@ -1,0 +1,32 @@
+
+.modal-container{
+    width: 60vw;
+    height:80vh;
+    border-radius: 5px 5px 5px 5px;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+.modal-col{
+    padding:2%;
+    border-left: 1px rgb(37, 37, 37);
+    
+}
+
+.modal-col video{
+    width:30vw;
+    height:80vh;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.modal-row{
+    padding:5%;
+}
+
+.modal-container input{
+    padding:2%;
+    outline: none;
+}

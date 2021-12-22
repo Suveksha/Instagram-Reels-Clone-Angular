@@ -1,0 +1,20 @@
+<div class="modal-container">
+    <div class="modal-col">
+        <video>
+            <source src=".\assets\Video\pexels-mikhail-nilov-7677695.mp4">
+        </video>
+    </div>
+
+    <div class="modal-col">
+        <div class="modal-row">
+            <div *ngFor="let comment of commentArray">
+                {{comment.text}}
+            </div>
+        </div>
+
+        <div class="modal-row">
+            <input type="text" placeholder={{placeHolder}} #Comment>
+            <button (click)="postComment(Comment)">Post</button>
+        </div>
+    </div>
+</div>

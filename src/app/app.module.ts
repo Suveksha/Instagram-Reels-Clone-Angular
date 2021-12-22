@@ -28,6 +28,8 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { FirebaseService } from './services/firebase.service';
 import { LikeComponent } from './like/like.component';
 import { CommentComponent } from './comment/comment.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CommentModalComponent } from './comment-modal/comment-modal.component';
 
 
 
@@ -49,6 +51,7 @@ import { CommentComponent } from './comment/comment.component';
     NotFoundComponent,
     LikeComponent,
     CommentComponent,
+    CommentModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,7 @@ import { CommentComponent } from './comment/comment.component';
     }),
     MatIconModule,
     MatMenuModule,
-   
+    MatDialogModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent], 

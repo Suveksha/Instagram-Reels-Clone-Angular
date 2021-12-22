@@ -61,6 +61,7 @@ export class FirebaseService {
      this.firebaseAuth.onAuthStateChanged((user)=>{
        if(user)
        this.userData=user
+      //  console.log("Hey I am userData",this.userData)
      })
    }
 

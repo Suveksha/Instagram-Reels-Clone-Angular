@@ -47,7 +47,12 @@ export class UploadBtnComponent implements OnInit {
         this.firestore.collection('posts').doc(this.pid).set({
           postURL:url,
           uid:this.uData.uid,
-          postId:this.pid
+          postId:this.pid,
+          liked:{
+            likedBy:[],
+            no_Likes:0
+          },
+          comment:[]
         })
           this.prevPostID.push(this.pid)
         this.firestore.collection('users').doc(this.uData.uid).update({
